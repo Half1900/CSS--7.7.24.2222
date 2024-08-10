@@ -1,0 +1,32 @@
+{
+  "name": "CSS选择器",
+  "description": "选择想要选择的选择器",
+  "manifest_version":3,
+  "version": "7.17.24.2354",
+  "icons": { 
+    "16": "image/seckill-16.png",
+    "48": "image/seckill-48.png",
+    "128": "image/seckill-128.png" 
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"], 
+      "js": ["lib/jquery-3.2.1.min.js", "js/content.js"],
+      "css" : ["css/form.css"]
+    }
+  ],
+  "action": {
+    "default_icon": {"128": "image/seckill-128.png"},
+    "default_title": "CSS选择器" ,
+    "default_popup": "index.html"
+  }
+}
+
