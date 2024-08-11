@@ -371,6 +371,9 @@ function imageUrl(e, pos, nodeStr) {
 }
 
 function clickStartFunc(e) {
+    const manifest = chrome.runtime.getManifest();
+    const title = manifest.name;
+    if(title !=="CSS选择器") return;
     var getPath = $('#secKillForm #location').val();
     var selector = $('#secKillForm input[name=selector]:checked').val();
     if (getPath.trim() == '') {
